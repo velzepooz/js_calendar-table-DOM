@@ -36,10 +36,13 @@ function calendarTable(year, month, element) {
 
   let counter = 0;
 
-  for (let i = 0; i < 5; i++) {
+  const daysInWeek = 7;
+  const numberOfWeeks = Math.ceil((daysInMonth + startDayNumber) / 7);
+
+  for (let i = 0; i < numberOfWeeks; i++) {
     const week = tbody.insertRow();
 
-    for (let j = 0; j < 7; j++) {
+    for (let j = 0; j < daysInWeek; j++) {
       const day = week.insertCell();
 
       if (counter !== calendarDates.length) {
